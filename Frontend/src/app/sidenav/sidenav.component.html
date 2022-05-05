@@ -1,0 +1,74 @@
+<section class="side-nav closed">
+	<mat-sidenav #sidenav role="navigation">
+		<div class="header-logo" routerLink="/accounts">
+			<img src="../../../assets/images/rebg.jpg" />
+		</div>
+
+		<div >
+			
+			<mat-list >
+				<mat-list-item
+					[routerLink]="'/process'"
+					
+				>
+					<mat-icon class="nav-icons">wysiwyg</mat-icon>
+					<span class="route-text">PROJECT MANAGER</span>
+				</mat-list-item>
+			</mat-list>
+			<mat-list>
+				<mat-list-item
+					[routerLink]="'/process'"
+					
+				>
+					<mat-icon class="nav-icons">wallpaper</mat-icon>
+					<span class="route-text">COMPLAINT MANAGER</span>
+				</mat-list-item>
+			</mat-list>
+			<mat-list>
+				<mat-list-item
+					[routerLink]="'/process'"
+					
+				>
+					<mat-icon class="nav-icons">wallpaper</mat-icon>
+					<span class="route-text">COMPLAINT MANAGER</span>
+				</mat-list-item>
+			</mat-list>
+		</div>
+	</mat-sidenav>
+</section>
+
+<nav class="side-bar"  >
+	<a
+		[routerLink]="'/catalog/catalog-manage'"
+		#rManage="routerLinkActive"
+		routerLinkActive="side-bar__link--active"
+		class="side-bar__link"
+	>
+		<img src="assets/icons/import2-icon.svg" class="side-bar__link--icon icon-import" />
+		<p class="side-bar__link--name">
+			Manage
+		</p>
+	</a>
+	
+</nav>
+
+
+
+<section class="side-container closed">
+	<div class="header closed">
+		<mat-toolbar class="header_toolbar">
+			<app-navbar></app-navbar>
+		</mat-toolbar>
+	</div>
+
+	<div class="main-container closed">
+		<mat-sidenav-container>
+			<mat-sidenav-content >
+				<router-outlet></router-outlet>
+			</mat-sidenav-content>
+		</mat-sidenav-container>
+	</div>
+</section>
+
+
+

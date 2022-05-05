@@ -1,0 +1,7 @@
+<div class="__footer _flex a-center j-center">
+    <span class="border-gradient base-select--outline">
+        <select [ngModel]="selectedOption" (ngModelChange)="onChange($event)" name="drpnew">
+            <option *ngFor="let option of options" [ngValue]="option" >{{option.value}}</option>
+        </select>
+    </span>
+</div>

@@ -1,0 +1,12 @@
+<div class="mat-combo-with-button">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Select Category</mat-label>
+        <mat-select [formControl]="form">
+            <button mat-button (click)="openDialog()" class="addC"><i class="fas fa-plus"></i> Add a new category</button>
+            <mat-option *ngFor="let food of data" [value]="food.id">
+            {{food.value}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

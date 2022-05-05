@@ -1,0 +1,25 @@
+.example-full-width {
+    width: 100%;
+}
+.addC {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    text-align: left;
+    color: #5d8fdc;
+}
+::ng-deep {
+    .mat-combo-with-button{
+        .mat-form-field-appearance-fill .mat-form-field-flex {
+            background-color: #0000000a
+        }
+        .mat-form-field-appearance-fill .mat-form-field-underline:before {
+            background-color: #0000006b;
+        }
+        .mat-form-field-label{
+            color:#000 !important;
+        }
+    }
+    
+}

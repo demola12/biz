@@ -1,0 +1,61 @@
+._flex.j-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+
+.__footer {
+    position: fixed;
+    z-index: 1;
+    background: #fff;
+    bottom: 10px;
+    right: 0;
+}
+
+.border-gradient {
+    background: #fff;
+    position: relative;
+    border-radius: 10px;
+}
+
+.base-select--outline select {
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 16px 19px 16px 51px
+}
+
+.base-select--outline:before {
+    content: "";
+    background-image: url(https://www.beezop.com/dashboard/static/media/arrow-right.afc0dde0.svg);
+    background-size: cover;
+    background-position: 50%;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 16px;
+    left: 19px;
+    pointer-events: none;
+}
+
+select {
+    appearance: none;
+}
+
+.border-gradient:after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    transition: .2s ease-out;
+    background: linear-gradient(180deg, #0f57d4, #039fea);
+    background: var(--bz-gradient--border);
+    z-index: -1;
+    border-radius: 6px;
+}

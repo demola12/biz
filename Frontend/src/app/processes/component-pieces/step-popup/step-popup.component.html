@@ -1,0 +1,16 @@
+<app-mat-text-box [form]="data.titleForm" [placeholder]="'Enter step title here'"></app-mat-text-box>
+<quill-editor placeholder="Enter Text"
+[styles]="{'min-height': '70px','max-height': '200px','color':'black'}"
+[formControl]="data.description"
+>
+    </quill-editor>
+    <div class="save-button">
+        <app-button
+        [text]="'Save'"
+        (clicker)="saveStep()"
+    >
+    </app-button>
+    </div>
+    
+
+

@@ -1,0 +1,99 @@
+.atag{
+    text-decoration: none;
+}
+._flex {
+    display: flex;
+    align-items: center;
+}
+
+.home-process {
+    margin-bottom: 24px;
+    box-shadow: 0 1px 1px 2px rgb(0 0 0 / 10%);
+    border-radius: 5px;
+    background: #fff;
+    transition: .2s ease-out;
+    padding-right: 16px;
+    position: relative;
+}
+
+.home-process .__left.active {
+    background: #fff;
+    border-radius: 5px;
+}
+
+._flex.a-center {
+    align-items: center;
+}
+
+.home-process .__left {
+    padding: 10px 16px;
+    flex: 1 1;
+    white-space: nowrap;
+    overflow: hidden;
+    position: unset!important;
+    background: #fff;
+    position: relative;
+    border-radius: 5px;
+}
+
+._flex .no-shrink {
+    flex-shrink: 0;
+}
+
+._flex.j-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-process__icon {
+    height: 40px;
+    width: 40px;
+    background: #5c5df7;
+    margin-right: 12px;
+    border-radius: 5px;
+}
+
+.home-process__icon:after {
+    content: attr(data-initials);
+    color: #fff;
+    font-weight: 500;
+}
+
+.home-process__name {
+    font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0!important;
+}
+
+.home-process .__left.active:after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    transition: .2s ease-out;
+    z-index: -1;
+    border-radius: 6px;
+}
+
+.home-process .__right {
+    flex-shrink: 0;
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+}
+
+.home-process .__right .mini-modal-button {
+    position: relative;
+}
+
+.home-process .__right .mini-modal-button,
+.home-process .__right>button {
+    margin-left: 19px;
+    transition: .2s ease;
+}

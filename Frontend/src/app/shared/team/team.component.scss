@@ -1,0 +1,121 @@
+.app-container {
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.animation--fade-up {
+    animation-name: fadeUp;
+    animation-duration: .3s;
+}
+
+.app-container._small .app-wrapper {
+    max-width: 780px!important;
+    margin-right: auto!important;
+    margin-left: auto!important;
+}
+
+.base-permission--header {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.base-permission--header {
+    margin: 16px 0;
+}
+
+.base-permission--header .base-permission__row {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.base-permission__row {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+}
+
+._flex.a-center {
+    display: flex;
+    align-items: center;
+}
+
+.base-permission__col--long {
+    flex: 1.61 1;
+}
+
+.base-permission__col,
+.base-permission__col--long,
+.base-permission__col--small {
+    flex: 1 1;
+    flex-shrink: 0;
+    margin-right: 32px;
+}
+
+.base-permission__col--long-x {
+    flex: 2 1;
+    display: flex;
+    align-items: center;
+}
+
+.base-permission__col,
+.base-permission__col--long,
+.base-permission__col--small {
+    flex: 1 1;
+    flex-shrink: 0;
+    margin-right: 32px;
+}
+
+.base-permission__col--small {
+    margin-right: 0;
+    flex: 0.15 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+._card {
+    background: #fff;
+    border: 1px solid #eaedf3;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 4%);
+    border-radius: 5px;
+}
+
+.base-permission__avatar {
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    width: 46px;
+    background: #3b82f6;
+    border-radius: 100vh;
+    color: #fff;
+    flex-shrink: 0;
+    text-transform: uppercase;
+}
+
+.base-permission__name {
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+.base-permission__name .role {
+    font-weight: 400;
+    font-size: 14px;
+    color: #737a91;
+}
+
+.base-permission__email {
+    font-size: 14px;
+    color: #737a91;
+    line-height: 1.5;
+    margin-top: 4px;
+}
+
+.base-permission__faint-text {
+    color: #737a91;
+    font-size: 14px;
+}

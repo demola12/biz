@@ -1,0 +1,12 @@
+
+<nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let link of links;let i=index"
+       
+       #rla="routerLinkActive"
+       [active]="rla.isActive"
+		[routerLinkActiveOptions]="{ exact: true }"
+		[routerLink]="link.link"
+				routerLinkActive
+       > {{link.name}} </a>
+</nav>
+<!-- (click)="navigateTo(link.link)" -->

@@ -1,0 +1,618 @@
+$top-menu-height: 4.35rem;
+$filed-blue:blue;
+$filed-lighter-gray:gray;
+$filed-dark-gray:gray;
+$filed-coral:coral;
+$forth-highest-z-index:1000;
+$filed-lightest-gray:gray;
+$new-sidenav-color:black;
+$sidenav-width:40px;
+$white:white;
+::ng-deep {
+    .mat-drawer-container {
+        background-color: $white;
+        color: $filed-lightest-gray;
+    }
+}
+
+:host {
+    width: 100%;
+    height: 100vh;
+}
+
+.impersonation-exit {
+    background-color: #02234d;
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding-left: 26px;
+    padding-right: 30px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    margin-right: 11rem;
+    margin-bottom: 13.26px;
+    .impersonation-content {
+        display: flex;
+        .impersonation-text {
+            padding-right: 15px;
+            letter-spacing: 0.15px;
+            font-family: 'Roboto-Regular', sans-serif;
+        }
+    }
+}
+
+:host ::ng-deep.mat-select-value {
+    color: $filed-blue;
+    font-weight: 500;
+}
+
+::ng-deep.wrapper-dropdown-buttons {
+    padding: 0.6rem 1.2rem 0;
+    .wrapper-button:first-child {
+        margin-bottom: 1.2rem;
+    }
+}
+
+.toast-position {
+    z-index: 1000;
+}
+
+:host {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    $sideNav_open: 15rem;
+    $sideNav_close: 4.35rem;
+    $header_height: 4.35rem;
+    .side-container {
+        height: 100%;
+        width: calc(100% - 4.35rem);
+        transition: all 0.3s cubic-bezier(0.19, 1, 0.56, 1);
+        margin-left: 4.35rem;
+        .header {
+            height: $header_height;
+            z-index: 2;
+            position: relative;
+            box-shadow: 0 0.1rem 0.3rem $filed-lighter-gray;
+             ::ng-deep .mat-toolbar-row,
+            .mat-toolbar-single-row {
+                height: $top-menu-height !important;
+            }
+            .header_toolbar {
+                background: $white;
+                padding: 0 1.8rem;
+                .mat-button {
+                    min-width: 2.5rem;
+                    padding: 0;
+                    border-radius: 0;
+                    transition: color 0.3s ease;
+                }
+                .mat-button:hover {
+                    color: $filed-blue;
+                }
+                .header_logo {
+                    display: flex;
+                    line-height: 0.5rem;
+                    cursor: pointer;
+                    align-items: center;
+                    margin: 0 auto;
+                    img {
+                        width: 2.2rem;
+                        height: 2.2rem;
+                    }
+                }
+                .header-divider {
+                    height: 100%;
+                    background: $filed-dark-gray;
+                    width: 0.1rem;
+                }
+                .header_icons {
+                    min-width: initial;
+                    margin-left: auto;
+                    height: 4.35rem;
+                    margin-right: -10px;
+                    button {
+                        color: $filed-lighter-gray;
+                        min-width: 2.5rem;
+                        height: 4rem;
+                        i {
+                            font-size: 1.2rem;
+                        }
+                    }
+                    button:hover {
+                        color: $filed-blue;
+                    }
+                    .help-button:hover {
+                        color: $filed-coral;
+                    }
+                     ::ng-deep .mat-button-focus-overlay {
+                        display: none;
+                    }
+                    .account-button-active {
+                        color: $filed-blue;
+                    }
+                    .help-button-active {
+                        color: $filed-coral;
+                    }
+                    .unpaid-invoice-btn {
+                        display: inline-block;
+                        padding: 0 0.5rem;
+                        position: relative;
+                        a {
+                            display: inline-block;
+                            border: 1px solid $filed-coral;
+                            border-radius: 4px;
+                            font-size: 14px;
+                            font-weight: 500;
+                            text-align: center;
+                            color: $filed-coral;
+                            padding: 0 0.5rem;
+                        }
+                        a:hover {
+                            background-color: #fdebe7;
+                        }
+                        .unpaid-description {
+                            position: absolute;
+                            right: 0.5rem;
+                            top: 100%;
+                            box-shadow: 0px 3px 6px #00000029;
+                            background-color: $white;
+                            font-size: 12px;
+                            padding: 0.8rem 0.7rem;
+                            width: 10rem;
+                            white-space: normal;
+                            line-height: 16px;
+                            display: none;
+                            text-align: justify;
+                        }
+                    }
+                    .unpaid-invoice-btn:hover>.unpaid-description {
+                        display: block;
+                    }
+                }
+                .header_icons:hover {
+                    color: $filed-dark-gray;
+                }
+                .buttons-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    box-shadow: 0 1px 3px $filed-lighter-gray;
+                    border-radius: 3px;
+                    .unselected-buttons-container {
+                        position: relative;
+                        &::after {
+                            content: '';
+                            background: $filed-lighter-gray;
+                            width: 1px;
+                            height: 70%;
+                            top: 15%;
+                            bottom: 15%;
+                            position: absolute;
+                            left: 0;
+                        }
+                    }
+                    button.mat-button {
+                        height: 2.5rem;
+                        min-width: 2.5rem;
+                        line-height: 1;
+                        display: flex;
+                        justify-content: center;
+                        &:hover {
+                            background: none;
+                        }
+                    }
+                    i {
+                        font-size: 1rem;
+                        line-height: 1;
+                        color: $filed-blue;
+                    }
+                    img {
+                        height: 1rem;
+                        width: 0.625rem;
+                    }
+                }
+            }
+        }
+        .main-container {
+            height: calc(100% - #{$header_height});
+            overflow: auto;
+            width: 100%;
+             ::ng-deep .mat-sidenav-container {
+                height: 100%;
+                .loading-indicator {
+                    width: 100%;
+                    height: 100%;
+                    position: fixed;
+                    display: block;
+                    z-index: 1000000;
+                    top: 0;
+                    background-color: rgba(249, 249, 249, 0.84);
+                }
+                .spinning-loader {
+                    background-color: transparent !important;
+                }
+            }
+            &.open {
+                top: $header_height;
+            }
+            &.closed {
+                top: $header_height;
+            }
+        }
+    }
+    .side-nav {
+        font-weight: 400;
+        height: 100%;
+        transform: none !important;
+        visibility: visible !important;
+        transition: all 0.3s cubic-bezier(0.19, 1, 0.56, 1);
+        position: fixed;
+        z-index: $forth-highest-z-index;
+        /* @include media-below(768px) {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 10;
+		} */
+        &.open::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(47, 47, 47, 0.62);
+        }
+        &.open {
+            width: #{$sideNav_open};
+            background: $filed-dark-gray;
+             ::ng-deep .route-text {
+                opacity: 1;
+            }
+             ::ng-deep .mat-list-item .mat-list-item-content {
+                flex-direction: row;
+                padding-left: 1rem;
+                .route-text {
+                    text-align: left;
+                    animation: closeOpenFadeInOut 0.1s linear 0.2s forwards;
+                    opacity: 0;
+                    padding-left: 1.5rem;
+                }
+                mat-icon {
+                    animation: closeOpenFadeInOut 0.1s linear 0.2s forwards;
+                }
+            }
+            @keyframes closeOpenFadeInOut {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
+        &.closed {
+            width: #{$sideNav_close};
+            background: $filed-dark-gray;
+             ::ng-deep .mat-list-item .mat-list-item-content {
+                flex-direction: column;
+                .route-text {
+                    text-align: center;
+                    font-size: 0.43rem;
+                    line-height: 0.56rem;
+                    letter-spacing: 0.09rem;
+                    margin-top: 0.31em;
+                    margin-bottom: 0.31rem;
+                    opacity: 0;
+                    color: gray;
+                    animation: closeOpenFadeInOut2 0.1s linear 0.2s forwards;
+                }
+                i {
+                    animation: closeOpenFadeInOut2 0.1s linear 0.2s forwards;
+                }
+            }
+            @keyframes closeOpenFadeInOut2 {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
+        .side_nav_account_name_placeholder {
+            color: $filed-lightest-gray;
+            font-weight: 400;
+        }
+        .header-logo {
+            margin-top: 1.25rem;
+            margin-bottom: 0.625rem;
+            img {
+                height: 2.2rem;
+                width: 2.2rem;
+                display: flex;
+                margin: 0 auto;
+                position: relative;
+            }
+        }
+        .side_nav_accounts {
+            font-size: 14px !important;
+            font-weight: 400;
+            text-align: left;
+            color: $filed-dark-gray;
+        }
+        .side_nav_mat_form_filed {
+             ::ng-deep.mat-form-field-underline {
+                display: none;
+            }
+        }
+         ::ng-deep.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+            color: $filed-lightest-gray;
+        }
+         ::ng-deep .mat-nav-list {
+            padding-top: 0;
+            .mat-list-item-content {
+                padding: 0;
+                font-size: 0.8rem;
+                text-align: center;
+            }
+            a {
+                padding-left: 0.5rem;
+            }
+            a:nth-child(1),
+            a:nth-child(5),
+            a:nth-child(8),
+            a:nth-child(9) {
+                -moz-background-clip: padding;
+                -webkit-background-clip: padding;
+                background-clip: padding-box;
+            }
+        }
+        .selectedItem {
+            color: $white;
+            background: transparentize($white, 0.8);
+            opacity: 1 !important;
+            border-left: 3px solid $white;
+            .mat-list-item-content {
+                padding-left: 24px !important;
+            }
+        }
+         ::ng-deep mat-sidenav {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            .mat-drawer-inner-container {
+                overflow-x: hidden;
+                // WEBKIT SCROLLBAR ONLY
+                /* width */
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    transition-duration: 0.1s;
+                    background: rgba(0, 0, 0, 0.5);
+                }
+                /* Handle on hover */
+                &::-webkit-scrollbar-thumb:hover {
+                    background: rgba(0, 0, 0, 0.7);
+                }
+                mat-list {
+                    padding-top: 48px;
+                }
+                .mat-nav-list .mat-list-item:hover {
+                    color: $white;
+                    padding-left: 20px;
+                    background: transparent;
+                }
+            }
+            .mat-list-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                height: 3.125rem;
+                box-sizing: border-box;
+                .mat-list-item-content {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0 0.42rem;
+                    .route-text {
+                        font-weight: 400;
+                        width: 100%;
+                        overflow: hidden;
+                        line-height: auto;
+                    }
+                    mat-icon {
+                        font-size: 1.4rem !important;
+                        height: auto !important;
+                        width: auto !important;
+                    }
+                }
+            }
+        }
+        mat-sidenav-container {
+            height: 100%;
+            background: $new-sidenav-color;
+            z-index: 0;
+        }
+        mat-sidenav {
+            width: 100% !important;
+            height: 100%;
+            background: $new-sidenav-color;
+            position: relative;
+            transform: none !important;
+            visibility: visible !important;
+            left: 0;
+        }
+        .mat-divider {
+            border-top-color: $white;
+            opacity: 0.12;
+            margin-top: 0;
+        }
+        .mat-list-base {
+            padding: 0;
+            margin-bottom: 12px;
+            .mat-list-item {
+                color: $filed-lightest-gray;
+                transition: all 0.3s cubic-bezier(0.19, 1, 0.56, 1);
+            }
+            .mat-list-item:hover {
+                color: $white;
+                background: transparentize($white, 0.9);
+                border-left: $white 3px solid;
+            }
+        }
+        .small-side-nav {
+            width: calc(100% - #{$sidenav-width});
+            background: $filed-lightest-gray;
+        }
+         ::ng-deep .mat-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-form-field-flex {
+            height: 100%;
+        }
+         ::ng-deep.mat-select-arrow {
+            color: $filed-dark-gray;
+        }
+         :host ::ng-deep.mat-select-value {
+            color: $white;
+            opacity: 0.7;
+            font-weight: 400;
+        }
+        .mat-list-item {
+            cursor: pointer;
+        }
+        .mat-sidenav-backdrop {
+            opacity: 0;
+        }
+    }
+}
+
+.not-connected {
+    pointer-events: none;
+}
+
+::ng-deep .mat-option-text {
+    color: $filed-dark-gray;
+    font-weight: 400;
+}
+
+.mat-option {
+    color: $filed-dark-gray;
+    font-weight: 400;
+}
+
+.deploy-timestamp {
+    position: fixed;
+    bottom: 0;
+    color: $white;
+    z-index: 3;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    time {
+        color: $filed-blue;
+    }
+}
+
+.side-bar {
+    position: absolute;
+    height: calc(100% - 4.35rem);
+    top: 4.35rem;
+    left: 4.35rem;
+    z-index: 2;
+    width: max-content;
+    background-color: $new-sidenav-color;
+    color: azure;
+    padding-top: 32.28px;
+    padding-bottom: 32.28px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+    .side-bar__link--name {
+        padding-right: 0.5rem;
+    }
+    &--active {
+        visibility: visible;
+        opacity: 1;
+    }
+    &__link {
+        color: $white;
+        border-left: 5px solid transparent;
+        &--active,
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.409);
+            border-left: 5px solid #ffffff;
+        }
+        display: flex;
+        height: 43px;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 2.8px;
+        padding: 1rem 2rem;
+        &--icon,
+        .nav-icons {
+            width: 16px;
+            height: auto;
+            margin-right: 10px;
+        }
+    }
+    .icon-export,
+    .icon-import {
+        margin-right: 0.5rem;
+    }
+    .export-icon {
+        margin-left: 0.3rem;
+        margin-right: 0.2rem;
+        width: 18px;
+    }
+    .issues-icon {
+        margin-right: 0.4rem;
+        width: 18px;
+    }
+    .issues-count {
+        width: 26px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2717e;
+    }
+}
+
+.progress {
+    margin-right: 1rem;
+    .progress-text {
+        font-size: 14px;
+        font-weight: 400;
+        margin-right: 10.61px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1150px) {
+     :host {
+        height: 100vh;
+        overflow-x: auto;
+    }
+}
+
+.isSelectedNoBO {
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 1 !important;
+    border-left: 3px solid #ffffff;
+}
+
+.anotherSelectedNoBO {
+    background: none !important;
+    opacity: none !important;
+    border-left: none !important;
+}
+
+app-navbar {
+    width: 100%;
+}

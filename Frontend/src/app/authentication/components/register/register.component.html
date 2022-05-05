@@ -1,0 +1,74 @@
+<div class="con">
+    <app-registration >
+        <div class="auth-form__heading">
+            <h3 class="title">Try free for 30 days</h3>
+            <p class="description">Sign up and get started.</p>
+        </div>
+        <form class="example-form">
+            <div *ngIf='step1'>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Full Name</mat-label>
+                    <input  placeholder="Full Name" class="input" type="text" [formControl]="fullname" matInput>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input class="input" type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                        placeholder="Email">
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" class="input" type="password" (change)="onPasswordChange()" [formControl]="password">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput placeholder="Confirm Password" class="input" (change)="onPasswordChange()" type="password" [formControl]="password1">
+                    <mat-error *ngIf="confirm_password.hasError('mismatch')">
+                        Password do not match.
+                        </mat-error>
+
+                </mat-form-field>
+                <app-button
+                    [text]="'Next'"
+                    [fontAwesome]= "'fas fa-long-arrow-alt-right'"
+                    (clicker)="onClick($event)"
+                >   
+                </app-button>
+            </div>
+            <div *ngIf='!step1'>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Company Name</mat-label>
+                    <input matInput placeholder="Company Name" class="input" type="text" [formControl]="companyName">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Job Title</mat-label>
+                    <input matInput placeholder="Job Title" class="input" type="text" [formControl]="jobTitle">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Country Name</mat-label>
+                    <mat-select [(value)]="selectedCountry"  [formControl]="countryName">
+                        <mat-option *ngFor="let con of cons" [value]="con.code">
+                        {{con.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput placeholder="Phone Number" class="input" type="text" [formControl]="phone">
+                </mat-form-field>
+                <app-button
+                [text]="'Finish'"
+                [fontAwesome]= "'fas fa-long-arrow-alt-right'"
+                (clicker)="submit()"
+            >   
+            </app-button>
+            </div>
+            
+        </form>
+    </app-registration>
+</div>

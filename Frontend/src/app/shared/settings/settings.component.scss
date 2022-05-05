@@ -1,0 +1,44 @@
+button {
+    font-size: inherit;
+    cursor: pointer;
+}
+
+._card {
+    background: #fff;
+    border: 1px solid #eaedf3;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 4%);
+    border-radius: 5px;
+}
+
+._flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-action {
+    padding: 8px;
+    border: none;
+    font-weight: 500;
+    width: 100%;
+}
+
+._flex.a-center {
+    align-items: center;
+}
+
+.profile-action .icon-holder {
+    height: 37px;
+    width: 40px;
+    background-color: rgba(59, 131, 246, .1);
+    display: block;
+    margin-right: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-lock {
+    color: blue;
+}

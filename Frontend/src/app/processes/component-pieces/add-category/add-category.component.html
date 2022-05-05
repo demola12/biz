@@ -1,0 +1,11 @@
+<div class="parent">
+    <h6>Add new category</h6>
+    <div class="example-form">
+        <app-mat-text-box [form]="titleForm"  [placeholder]="'Enter category name'"></app-mat-text-box>
+        <app-button
+            [text]="'Add category'"
+            (clicker)="submitForm()"
+        >
+        </app-button>
+    </div>
+</div>

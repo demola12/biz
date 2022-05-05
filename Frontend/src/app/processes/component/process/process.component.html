@@ -1,0 +1,68 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 first py-5">
+            <h5 class="pb-3">Choose a category</h5>
+            <div *ngFor="let categoryProcess of categoryProcesses">
+                <app-category (catClick)="categoryClick($event)"  [category]="categoryProcess"></app-category>
+            </div>
+            
+
+            <div class="newprocess">
+                <app-button (clicker)="addProcess()" [fontAwesome]="'far fa-plus-square'" [text]="'Add a new process'" class="nprocess"></app-button>
+            </div>
+        </div>
+        <div class="col-sm-12 second py-5" [ngClass]="{'col-md-8':!selectedDepartment,'col-md-4':selectedDepartment}">
+            <app-button class="price" [fontAwesome]="'fas fa-tags'" [text]="'19 days left for your Free trial'">
+            </app-button>
+            <div class="dropdown" *ngIf="selectedDepartment">
+                {{selectedDepartment.name}}
+                <div class="__footer _flex a-center j-center">
+                    <span class="border-gradient base-select--outline">
+                        <select name="cars" id="cars">
+                            <option value="volvo">Default</option>
+                            <option value="saab">Newest first</option>
+                            <option value="opel">Oldest first</option>
+                            <option value="audi">Alphabetical</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let processData of processDatas" cdkDrag>
+                    <app-admincard (steps)="getSteps($event)" [Process]="processData" [per]="calculatePercentage(processData)"></app-admincard>
+                </div>
+              </div>
+            
+        </div>
+        <div class="col-md-4 col-sm-12 third py-5" *ngIf="selectedDepartment">
+            <div *ngIf="selectedProcess">
+                <div class="thead">
+                    <h5>{{selectedProcess.name}}</h5>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <div class="progressbox">
+                    <p>{{per[0]}}% Completed</p>
+                    <div class="progressbar">
+                        <div class="pro" style="width:{{per[0]}}%"></div>
+                    </div>
+                    <p class="" *ngIf="per[0] !== '100'">Step {{per[1]}} of {{allSteps.length}}</p>
+                    <p class="" *ngIf="per[0]==='100'">Step Completed</p>
+                </div>
+                <app-checkcard *ngIf="selectedStep && !completedDropdown" (selectedStep)="markStep($event)" [step]="selectedStep"></app-checkcard>
+                <app-dropdown [selectedOption]="options[0]"  *ngIf="per[0] !== '100'" [options]="options" (selected)="selectedOption($event)"></app-dropdown>
+                <ng-container *ngIf="per[0]==='100' || completedDropdown">
+                    <app-checkcard *ngFor="let loopStep of completedStep" (selectedStep)="markStep($event)" [step]="loopStep"></app-checkcard>
+                </ng-container>
+                
+                <button class="" *ngIf="per[0]==='100'">Restart Process</button>
+
+            </div>
+            <div *ngIf="!selectedProcess" class="select-process">
+                select a process to display the steps
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <app-settings></app-settings>  -->
+<!-- <app-team></app-team> -->

@@ -1,0 +1,37 @@
+<div class="container">
+<div class="row">
+    <div class="head-wrapper">
+        <i class="fas fa-arrow-left" (click)="navigateToProcess()"></i>
+        <div class="header-text"><h4>Create a process</h4></div>
+        <app-button
+            [text]="'Save Process'"
+            (clicker)="submitForm(true)"
+        >
+        </app-button>
+        <app-button
+            [text]="'Save Process and Return'"
+            (clicker)="submitForm(false)"
+        >
+        </app-button>
+        
+    </div>
+</div>
+<div>
+<div class="row sub">
+    <div class="col-md-6 col-sm-12" >
+        
+        <form class="example-form">
+            <app-mat-text-box [form]="titleForm" [placeholder]="'Enter process title here'"></app-mat-text-box>
+            <app-mat-combo-with-button [form]="comboForm" [data]="comboInterface" (addButton)="openDialog()"></app-mat-combo-with-button>
+            <app-mat-textarea [form]="descriptionForm" [placeholder]="'Add description (optional)'"></app-mat-textarea>
+        </form>
+    </div>
+    <div cdkDropList class="col-md-6 col-sm-12 second"  (cdkDropListDropped)="drop($event)">
+        <div class="edit-step" *ngFor="let step of steps;let i = index;" cdkDrag>
+            <app-add-step [step]="step" (newStepClick)="addstep($event)" [position]="i"></app-add-step>
+
+        </div>
+        
+    </div>
+</div>
+</div>

@@ -1,0 +1,16 @@
+.example-full-width {
+    width: 100%;
+}
+::ng-deep {
+    .mat-textarea{
+        .mat-form-field-appearance-fill .mat-form-field-flex {
+            background-color: #0000000a
+        }
+        .mat-form-field-appearance-fill .mat-form-field-underline:before {
+            background-color: #0000006b;
+        }
+        .mat-input-element::placeholder{
+            color: #0000008a;
+         }
+    }
+}

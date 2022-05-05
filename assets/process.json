@@ -1,0 +1,51 @@
+[
+    {
+        "name":"Complaints Management",
+        "description":"About Complaints Management",
+        "process":[
+            {
+                "name":"Recording complaints",
+                "description":"description",
+                "position":1,
+                "steps":[
+                    {
+                        "name":"Log in complaints in the complaint register",
+                        "description":"The register should contain the following information:  \n Date, Customer name, Item, Complaints details, Staff attending to customer, Comments of staff, Resolution and Status of Complaint",
+                        "position":1
+                    },
+                    {
+                        "name":"Also, indicate the status to the customer including feedback so the customer is in the loop",
+                        "description":"",
+                        "position":2
+                    }
+                ]
+            },{
+                "name":"Receving and responding to complaints about a defective/broken/missing Item or poor service",
+                "description":"description",
+                "position":2,
+                "steps":[
+                    {
+                        "name":"Empathise and apologize to the customer in this format: “Sorry for the inconvenience (acknowledge the message)",
+                        "description":"",
+                        "position":1
+                    },
+                    {
+                        "name":"Offer and execute a solution. For instance, ask the customer relevant questions about the product such as “what battery did you use?",
+                        "description":"",
+                        "position":2
+                    },
+                    {
+                        "name":"Follow-up with the customer to ensure that they are satisfied with the solution and thank them for their business.",
+                        "description":"",
+                        "position":3
+                    },
+                    {
+                        "name":"If the issue has not be resolved, inform the customer that a Sales person would contact them directly via phone to resolve the issue. Give them a timeline i.e. before COB or during work hours the next day.",
+                        "description":"",
+                        "position":4
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,17 @@
+<div class="addcard">
+    <div class="heading">
+        <p (click)="openDialog()" *ngIf="!titleForm.value">Enter title step here</p>
+            <p (click)="openDialog()" *ngIf="titleForm.value" >{{titleForm.value}}</p>
+        <div mat-button [matMenuTriggerFor]="menu"><i class="fas fa-ellipsis-h"></i></div>
+        <mat-menu #menu="matMenu">
+            <button (click)="newStep()" mat-menu-item><i class="fas fa-plus"></i> Add a step below</button>
+        </mat-menu>
+    </div>
+    <p (click)="openDialog()" *ngIf="!description.value">Add description or attachment (optional)</p>
+    <p (click)="openDialog()" *ngIf="description.value" [innerHTML]="description.value"></p>
+    <div class="footer">
+        <i class="fas fa-arrows-alt"></i>
+        <i class="fas fa-edit" (click)="openDialog()"></i>
+        <i class="fas fa-trash-alt"></i>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.addcard {
+    max-width: 350px;
+    margin: 0 auto;
+    border: 1px solid rgb(204, 204, 214);
+    padding: 15px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fa-ellipsis-h {
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}

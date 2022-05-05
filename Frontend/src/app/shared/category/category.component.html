@@ -1,0 +1,19 @@
+<!-- <div class="cat-card">
+    <div class="initial">AD</div>
+    <div class="process-name">Compliant management</div>
+    <div class="arrow"><i class="fas fa-angle-right"></i></div>
+    <div class="more"><i class="fas fa-ellipsis-h"></i></div>
+</div> -->
+<div (click)="clickCategory()" class="home-process _flex a-center j-between">
+    <a aria-current="page" class="__left _flex a-center active atag" href="javascript:void(0)">
+        <div class="home-process__icon _flex a-center j-center no-shrink" data-initials="CM" style="background: rgb(15, 177, 156);">
+        </div>
+        <p class="home-process__name">{{category.name}}</p>
+    </a>
+    <div class="__right _flex a-center">
+        <i class="fas fa-angle-right"></i>
+        <div class="mini-modal-button">
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+    </div>
+</div>
